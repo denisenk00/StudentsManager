@@ -28,6 +28,7 @@ import java.util.ResourceBundle;
 
 public class MainSceneController implements Initializable {
     private StudentsService studentsService = new StudentsService();
+    private FiltersService filtersService = new FiltersService();
 
     @FXML
     private TableView<Student> tableStudents;
@@ -177,9 +178,9 @@ public class MainSceneController implements Initializable {
 
         List<Student> students = studentsService.getAllStudents();
         tableStudents.setItems(FXCollections.observableArrayList(students));
-        facultyChBox.setItems(FXCollections.observableArrayList(FiltersService.getAvailableFaculties(students)));
-        groupChBox.setItems(FXCollections.observableArrayList(FiltersService.getAvailableGroups(students)));
-        courseChBox.setItems(FXCollections.observableArrayList(FiltersService.getAvailableCourses(students)));
+        facultyChBox.setItems(FXCollections.observableArrayList(filtersService.getAvailableFaculties(students)));
+        groupChBox.setItems(FXCollections.observableArrayList(filtersService.getAvailableGroups(students)));
+        courseChBox.setItems(FXCollections.observableArrayList(filtersService.getAvailableCourses(students)));
         facultyChBox.getSelectionModel().select("Всі");
         groupChBox.getSelectionModel().select("Всі");
         courseChBox.getSelectionModel().select("Всі");

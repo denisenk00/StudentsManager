@@ -77,13 +77,7 @@ public class AddSceneController {
         if (course <= 0 || course > 7) throw new RuntimeException("Значення курсу має бути в межах від 1 до 7");
         Student student = new Student(name, surname, fatherName, birthDate, address, phone, faculty, course, group);
         studentsService.addStudent(student);
-
-        Parent parent = FXMLLoader.load(getClass().getResource("/views/mainScene.fxml"));
-        Stage stage = (Stage) nameTF.getScene().getWindow();
-        stage.close();
-        stage = new Stage();
-        stage.setScene(new Scene(parent));
-        stage.show();
+        goToMainScene();
     }
 
     public void goToMainScene() throws IOException {

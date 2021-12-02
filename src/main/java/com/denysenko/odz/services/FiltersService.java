@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Set;
 
 public class FiltersService {
-    public static Set<String> getAvailableFaculties(List<Student> students) {
+    public Set<String> getAvailableFaculties(List<Student> students) {
         Set<String> faculties = new HashSet<>();
         faculties.add("Всі");
         students.forEach(student -> {
@@ -16,7 +16,7 @@ public class FiltersService {
         return faculties;
     }
 
-    public static Set<String> getAvailableCourses(List<Student> students) {
+    public Set<String> getAvailableCourses(List<Student> students) {
         Set<String> courses = new HashSet<>();
         courses.add("Всі");
         students.forEach(student -> {
@@ -25,7 +25,7 @@ public class FiltersService {
         return courses;
     }
 
-    public static Set<String> getAvailableGroups(List<Student> students) {
+    public Set<String> getAvailableGroups(List<Student> students) {
         Set<String> groups = new HashSet<>();
         groups.add("Всі");
         students.forEach(student -> {
